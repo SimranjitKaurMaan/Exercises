@@ -8,39 +8,40 @@ namespace Classes
 {
     class Stopwatch
     {
-        private DateTime StartTime;
-        private DateTime StopTime;
-        private TimeSpan Duration;
-        private bool IsStarted;
+        private DateTime _startTime;
+        private DateTime _stopTime;
+        private TimeSpan _duration;
+        private bool _isStarted;
 
 
         public void Start()
         {
-            if (IsStarted == false)
-            {
-                StartTime = DateTime.Now;
-                IsStarted = true;
-            }
-            else
+            if (_isStarted == true)
             {
                 throw new InvalidOperationException();
+               
             }
+           
+            
+                _startTime = DateTime.Now;
+                _isStarted = true;
+           
         }
 
         public void Stop()
         {
-            if (IsStarted == true)
+            if (_isStarted == true)
             {
-                StopTime = DateTime.Now;
-                IsStarted = false;
+                _stopTime = DateTime.Now;
+                _isStarted = false;
             }
 
         }
 
         public void CalculateDuration()
         {
-            Duration = StopTime - StartTime;
-            Console.WriteLine("Duration in seconds(s) : {0}",Duration);
+            _duration = _stopTime - _startTime;
+            Console.WriteLine("Duration in seconds(s) : {0}",_duration);
         }
     }
 }

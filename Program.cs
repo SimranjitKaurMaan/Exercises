@@ -15,7 +15,7 @@ namespace Classes
             Thread.Sleep(3000);
             s.Stop();
             s.CalculateDuration();
-            s.Start();
+            //s.Start();
             Thread.Sleep(1000);
             s.Start();
             Thread.Sleep(3000);
