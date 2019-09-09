@@ -22,7 +22,6 @@ namespace Classes
                
             }
            
-            
                 _startTime = DateTime.Now;
                 _isStarted = true;
            
@@ -30,11 +29,14 @@ namespace Classes
 
         public void Stop()
         {
-            if (_isStarted == true)
+            if (_isStarted == false)
             {
-                _stopTime = DateTime.Now;
-                _isStarted = false;
+                throw new InvalidOperationException();
+                
             }
+
+            _stopTime = DateTime.Now;
+            _isStarted = false;
 
         }
 
